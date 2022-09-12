@@ -1,0 +1,154 @@
+/* .navbar{
+    
+  background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000');
+    
+} */
+.background{
+    fill:aquamarine;
+  background-color:#F5F5F5;
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 7rem;
+  left: 0; 
+}
+
+.edit-btn {
+  
+  
+  background-color: #7B59D1;
+  position: absolute;
+  top: 5rem;
+  left: 10.4rem;
+}
+.debit-btn {
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 20rem;
+  left: 10.4rem;
+}
+
+.loan-btn {
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 12rem;
+  left: 11.4rem;
+}
+
+.newadmin {
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 9rem;
+  left: 2rem;
+}
+
+.admin {
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 12rem;
+  left: 2rem;
+}
+
+.newcustomer {
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 15rem;
+  left: 2rem;
+}
+
+.customer{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 18rem;
+  left: 2rem;
+}
+
+.newaccount{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 9rem;
+  left: 13rem;
+}
+
+.account{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 12rem;
+  left: 13rem;
+}
+
+
+.debit{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 9rem;
+  left:25rem;
+}
+
+.credit{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 12rem;
+  left: 25rem;
+}
+
+.newtransaction{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+
+  top: 15rem;
+  left: 13rem;
+ 
+}
+
+.transaction{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 18rem;
+  left: 13rem;
+  
+}
+
+.add{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 15rem;
+  left: 25rem;
+}
+
+.loans{
+ 
+  background-color: #7B59D1;
+  position: absolute;
+  top: 18rem;
+  left: 25rem;
+}
+
+
+
+
+
+
+
+
+
+

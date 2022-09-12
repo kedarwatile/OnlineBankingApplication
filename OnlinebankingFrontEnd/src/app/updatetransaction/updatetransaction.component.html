@@ -1,0 +1,99 @@
+<div class="background">
+<h3>Update Transaction</h3>
+<div [hidden]="submitted" style="width: 400px;">
+
+  <form #transactionForm="ngForm" (ngSubmit)="onSubmit()">
+      
+    <!-- <div class="form-group">
+      <label for="adrs">Transaction ID</label>
+      <input type="text" class="form-control" id="transactionId" [(ngModel)]="transaction.transactionId" name="transactionId">
+    </div> -->
+
+    <div class="form-group">
+        <label for="adrs">Account No</label>
+        <input type="text" #accountNo="ngModel" class="form-control" id="accountNo" required [(ngModel)]="transaction.accountNo" name="accountNo" >
+        <span *ngIf="accountNo.invalid && accountNo.touched" class="error">Enter Account Number to Transfer Money</span>
+      </div>
+  
+  
+      <!-- <div class="form-group">
+          <label for="adrs">Status</label>
+          <input type="text" #status="ngModel" class="form-control" id="status" required [(ngModel)]="transaction.status" name="status">
+          <span *ngIf="status.invalid && status.touched" class="error">Last Name is required</span>
+        </div>
+   -->
+   
+        <!-- <div class="form-group">
+          <label for="adrs">Transaction Date</label>
+          <input type="text" #transactionDate="ngModel"  class="form-control" id="transactionDate" required [(ngModel)]="transaction.transactionDate" name="transactionDate" pattern="[0-9]{10}$" >
+          <span *ngIf="transactionDate.invalid && transactionDate.touched" class="error">Enter Transaction Date</span>
+        </div> -->
+  
+<!--   
+        <div class="form-group">
+          <label for="adrs">Transaction Time</label>
+          <input type="text" #transactionTime="ngModel" class="form-control" id="transactionTime" required [(ngModel)]="transaction.transactionTime" name="transactionTime" pattern="[A-Za-z].{0,}" >
+          <span *ngIf="transactionTime.invalid && transactionTime.touched" class="error">Enter transaction Time</span>
+        </div> -->
+
+<!--         
+        <div class="form-group">
+          <label for="adrs">Credit</label>
+          <input type="text" #credit="ngModel" class="form-control" id="credit" required [(ngModel)]="transaction.credit" name="credit" pattern="[A-Za-z].{0,}" >
+          <span *ngIf="credit.invalid && credit.touched" class="error">Enter valid credit</span>
+        </div> -->
+
+        
+        <!-- <div class="form-group">
+          <label for="adrs">Debit</label>
+          <input type="text" #debit="ngModel" class="form-control" id="debit" required [(ngModel)]="transaction.debit" name="debit" pattern="[A-Za-z].{0,}" >
+          <span *ngIf="debit.invalid && debit.touched" class="error">Enter valid debit</span>
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label for="adrs">Transaction ID</label>
+          <input type="text" #transactionId="ngModel" class="form-control" id=" transactionId" required [(ngModel)]="transaction. transactionId" name=" transactionId" pattern="[A-Za-z].{0,}" >
+          <span *ngIf=" transactionId.invalid &&  transactionId.touched" class="error">Enter valid  transactionId</span>
+        </div> -->
+
+        <div class="form-group">
+          <label for="adrs">Transaction Type</label>
+          <input type="text" #transactionType="ngModel" class="form-control" id="transactionType" required [(ngModel)]="transaction.transactionType" name="transactionType" pattern="[A-Za-z].{0,}" >
+          <span *ngIf="transactionType.invalid && transactionType.touched" class="error">Enter  transactionType </span>
+        </div>
+
+        <div class="form-group">
+          <label for="adrs">Account Balance</label>
+          <input type="text" #accBal="ngModel" class="form-control" id="accBal" required [(ngModel)]="transaction.accBal" name="accBal"  >
+          <span *ngIf="accBal.invalid && accBal.touched" class="error">Enter your current balance</span>
+        </div>
+
+  
+  
+  
+<!--   
+        <div class="form-group">
+          <label for="adrs">Admin</label>
+          <input type="text" #admin="ngModel" class="form-control" id="admin" required [(ngModel)]="transaction.admin" name="admin">      
+          <span *ngIf="admin.invalid && admin.touched" class="error">Admin is required </span>
+        </div> -->
+        
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  </div>
+
+<div [hidden]="!submitted">
+  <h4>Updated successfully!</h4>
+</div>
+
+
+   <!-- accountNo: number=0;
+            status: string = "";
+            transactionDate: Date = new Date();
+            transactionTime: string = "";
+            credit: number=0;
+            debit: number=0;
+            transactionId: number=0;
+            transactionType: string ="";
+            accBal:number=0; -->

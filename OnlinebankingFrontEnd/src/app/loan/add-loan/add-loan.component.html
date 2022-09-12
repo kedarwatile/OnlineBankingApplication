@@ -1,0 +1,272 @@
+<div class="background">
+
+  <div class="container">
+    <h1 class="header">Online Loan Application Form </h1>
+
+
+    <div [hidden]="submitted" style="width: 400px;">
+
+
+      <form #loanForm="ngForm" class="card-body" (ngSubmit)="onSubmit()">
+
+        <fieldset>
+
+          <div class="form-group row">
+            <label for="adrs">Enter Your Name : </label>
+            <input type="text" #applicant_name="ngModel" placeholder="Please Enter your First And Last Name" class="form-control"
+              id="applicant_name" pattern="^[a-zA-Z\s]{1,30}" required [(ngModel)]="loan.applicant_name"
+              name="applicant_name">
+
+            <span *ngIf="applicant_name.invalid && applicant_name.touched" class="error">Applicant Name is
+              required</span>
+
+            <span *ngIf="applicant_name.errors?.['pattern']" class="error"> Applicant Name Must Contain Characters only
+            </span>
+          </div>
+
+          <br>
+
+          <div class="form-group row">
+            <label for="adrs">Phone Number :</label>
+            <input type="number" placeholder="Enter Your 10 Digit Phone Number" #phoneNumber="ngModel"
+              pattern="([0-9]){10,10}" class="form-control" id="phoneNumber" required [(ngModel)]="loan.phoneNumber"
+              name="phoneNumber">
+
+            <span *ngIf="phoneNumber.invalid && phoneNumber.touched" class="error">Phone Number is required</span>
+
+            <span *ngIf="phoneNumber.errors?.['pattern']" class="error">
+              Please Enter your Correct 10 Digit Phone Number without Country Code
+            </span>
+          </div>
+
+
+          <br>
+          <div class="form-group row">
+            <label for="adrs">Date Of Application :</label>
+            <input type="date" #dateOfApplication="ngModel" class="form-control" id="dateOfApplication" required
+              [(ngModel)]="loan.dateOfApplication " name="dateOfApplication">
+            <span *ngIf="dateOfApplication.invalid && dateOfApplication.touched" class="error">Date Of Application is
+              required</span>
+          </div>
+
+
+          <br>
+          <div class="form-group row">
+            <label for="adrs">Date of Birth</label>
+            <input type="date" #birthDate="ngModel" class="form-control" id="birthDate" required
+              [(ngModel)]="loan.birthDate " name="birthDate">
+            <span *ngIf="birthDate.invalid && birthDate.touched" class="error">Date Of Birth is
+              required</span>
+          </div>
+
+
+          <br>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">please Select your Id Proof Type</label>
+            </div>
+            <select class="custom-select" #id_type="ngModel" name="id_type" placeholder="click to Select Id Proof Type"
+              required [(ngModel)]="loan.id_type" id="id_type">
+
+              <option value="Adhar Card">Adhar Card</option>
+              <option value="Pan Card">Pan Card</option>
+              <option value="3">Visa Card</option>
+
+              <span *ngIf="id_type.invalid && id_type.touched" class="error">Proof Type is required</span>
+            </select>
+          </div>
+
+
+
+
+          <div class="form-group row">
+            <label for="adrs">Enter Your Id Proof Number :</label>
+            <input type="text" #idProofNo="ngModel" class="form-control" id="idProofNo" required
+              [(ngModel)]="loan.idProofNo" name="idProofNo">
+            <span *ngIf="idProofNo.invalid && idProofNo.touched" class="error">Id Proof Number is required</span>
+          </div>
+          <br>
+
+
+
+          <div class="form-group row">
+            <label for="adrs">Please Upload Your Id Proof Document (PDF Only)</label>
+          
+          <input type="file" #uploader  accept="application/pdf"  (change)="selectFile($event)">
+          </div>
+
+
+
+          <br>
+          <div>
+            <label for="adrs">Marital Status :</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" #marital_status="ngModel" type="radio" name="marital_status"
+                id="marital_status" required [(ngModel)]="loan.marital_status" value="Maried">
+              <label class="form-check-label" for="marital_status">Maried </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" #marital_status="ngModel" type="radio" name="marital_status"
+                id="marital_status" required [(ngModel)]="loan.marital_status" value="UnMaried">
+              <label class="form-check-label" for="marital_status">UnMaried</label>
+            </div>
+            <span *ngIf="marital_status.invalid && marital_status.touched" class="error">Marital Status is required
+              :</span>
+          </div>
+          <br>
+
+
+
+          <div>
+            <label for="adrs">Employement Status :</label>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="loan.employement_status" type="radio"
+                #employement_status="ngModel" required name="employement_status" id="employement_status" value="Self Employed">
+              <label class="form-check-label" for="employement_status">
+                Self Employed
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="loan.employement_status" type="radio"
+                name="employement_status"  required id="employement_status" #employement_status="ngModel" value="Employed">
+              <label class="form-check-label" for="employement_status">
+                Employeed
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="loan.employement_status" type="radio"
+                name="employement_status" required  id="employement_status" #employement_status="ngModel" value="Businees">
+              <label class="form-check-label" for="employement_status">
+                Businees
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="loan.employement_status" type="radio"
+                name="employement_status"  required id="employement_status" #employement_status="ngModel" value="Student">
+              <label class="form-check-label" for="employement_status">
+                Student
+              </label>
+
+              
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="loan.employement_status" type="radio"
+                name="employement_status" required id="employement_status" #employement_status="ngModel" value="UnEmployed">
+              <label class="form-check-label" for="employement_status">
+                UnEmployed
+              </label>
+
+            <span *ngIf="employement_status.invalid && employement_status.touched" class="error">Employement Status is
+              required</span>
+          </div>
+          </div>
+
+
+          <br>
+
+          <div class="form-group row">
+            <label for="adrs">Please Provide the Organisation you work? ( Optional) </label>
+            <input type="text" #place_of_work="ngModel" class="form-control" id="place_of_work" 
+              [(ngModel)]="loan.place_of_work" name="place_of_work">
+            <span *ngIf="place_of_work.invalid && place_of_work.touched" class="error">Place of Work is required</span>
+          </div>
+          <br>
+
+
+          <div class="form-group row">
+            <label for="adrs">Job Title(Optional) :</label>
+            <input type="text" #job_title="ngModel" class="form-control" id="job_title" 
+              [(ngModel)]="loan.job_title" name="job_title">
+            <span *ngIf="job_title.invalid && job_title.touched" class="error">Please Enter your Job Title</span>
+          </div>
+
+          <br>
+          <div class="form-group row">
+            <label for="adrs">Anual Income(Optional) :</label>
+            <input type="number" #anual_income="ngModel" class="form-control" id="anual_income" 
+              [(ngModel)]="loan.anual_income" name="anual_income">
+            <span *ngIf="anual_income.invalid && anual_income.touched" class="error">Anual Income is required</span>
+          </div>
+
+          <br>
+
+          <div class="form-group row">
+            <label for="adrs">Loan Amount :</label>
+            <input type="number" #loanAmount="ngModel" class="form-control" id="loanAmount" required
+              [(ngModel)]="loan.loanAmount" name="loanAmount">
+            <span *ngIf="loanAmount.invalid && loanAmount.touched" class="error">Please Enter the Loan Amount you
+              required</span>
+          </div>
+
+
+          <br>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Loan Type</label>
+            </div>
+            <select class="custom-select" #loanType="ngModel" class="form-control" id="loanType" required
+              [(ngModel)]="loan.loanType" name="loanType">
+              <option value="Student loan">Student loan</option>
+              <option value="Vehical loan">Vehical loan</option>
+              <option value="Housing loan">Housing loan</option>
+              <option value="Education loan">Education loan</option>
+              <option value="Personal loan">Personal loan</option>
+              <option value="Health loan">Health loan</option>
+
+            </select>
+            
+           
+          </div>
+          <span *ngIf="loanType.invalid && loanType.touched" class="error">  loan Type is required</span>
+
+          <br>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Office Use Only</label>
+            </div>
+            <input class="form-check-input" [(ngModel)]="loan.adminLoanAproval" type="radio"
+            checked #adminLoanAproval="ngModel" required name="adminLoanAproval" id="adminLoanAproval" value="Needs Evaluation & Approval">
+          <label class="form-check-label" for="adminLoanAproval">
+          Sent Application For Approval
+          </label>
+        </div>      
+  
+        
+          
+          <br>
+          <h6>
+            Click on Agree to proceed with your loan application.
+          </h6>
+          <div class="form-group row">
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" #acceptancebutton="ngModel" type="radio" name="acceptancebutton"
+                id="acceptancebutton" [(ngModel)]="loan.acceptancebutton" required [(ngModel)]="loan.acceptancebutton"
+                value="I Agree to Terms and Conditions">
+              <label class="form-check-label" for="acceptancebutton">I Agree </label>
+            </div>
+            <span *ngIf="acceptancebutton.invalid && acceptancebutton.touched" class="error">Please Agree the terms &
+              conditions to proceed </span>
+          </div>
+          <br>
+
+
+
+          <button type="submit" [disabled]='!loanForm.valid' class="btn btn-success" (click)="upload()" >Submit</button>
+        </fieldset>
+
+      </form>
+
+    </div>
+
+
+  </div>
+  <div [hidden]="!submitted" class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you have successfully applied for loan.</p>
+
+  </div>
+</div>

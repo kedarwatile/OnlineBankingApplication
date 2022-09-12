@@ -1,0 +1,77 @@
+<!-- <div class="conatiner center mx-auto">
+<div class="card mb-3 " style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-5">
+        <img src="../../assets/pass3.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="offset-1 col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> -->
+  <div class="background">
+  <div class="container center mx-auto" [hidden]="flag">
+    <!-- <div class="p-4 row">
+      <div class="col-md-4">
+          <img src="../../assets/pass3.jpg" class="rounded iheight" alt="Image of apple pie">
+      </div> -->
+  
+      <div class="offset-2 col-md-6">
+          <br>
+          <h2 class="text-capitalize">Forgot Password?</h2>
+        <br>
+        <br>
+          <strong><em>Enter registered email address.</em></strong>
+          <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <input type="text" class="form-control" id="userName" required email [(ngModel)]="user.userName" name="userName">
+                <p [hidden]="spanFlag" class="mt-1"><em>Email address doesn't exists.</em></p>
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="submit" class="btn btn-primary mt-2 px-4">Next</button>
+        </div>
+          </form>
+          </div>
+      </div>
+  </div>
+  <div class="container center mx-auto" [hidden]="!flag" >
+    <div class="p-4 row">
+      <!-- <div class="col-md-4">
+          <img src="../../assets/pass3.jpg" class="rounded iheight" alt="Image of apple pie">
+      </div> -->
+  
+      <div class="offset-2 col-md-6">
+          <br>
+          <h2 class="text-capitalize">Forgot Password?</h2>
+        <br>
+        <br>
+          <strong><em>Enter the New Password.</em></strong>
+          <form (ngSubmit)="onConfirm()">
+              <div class="form-group">
+                
+                <input type="password" class="form-control" id="password" required  [(ngModel)]="user.password" name="password">
+                
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="submit" class="btn btn-success mt-2 px-4">Submit</button>
+        </div>
+          </form>
+          </div>
+      </div>
+  </div>
+  
+  <!-- <div class="container">
+      <div class="row">
+          <div class="offset-2 col-md-6">
+              <img src="../../assets/password.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-4">
+              <h3>Forgot Password</h3>
+          </div>
+      </div>
+  </div> -->

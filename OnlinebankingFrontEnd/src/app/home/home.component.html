@@ -1,0 +1,267 @@
+<!-- 
+<nav class="navbar">
+  <ul class="navbar-nav">
+    
+   
+    <li class="nav-item" *ngIf="lService.userRole">
+      <a routerLink="/loans" class="nav-link" routerLinkActive="active">Loan List</a>
+  </li>
+  <li class="nav-item" *ngIf="lService.userRole">
+      <a routerLink="/add" class="nav-link" routerLinkActive="active">Apply Loan</a>
+  </li>
+   
+  <li class="nav-item" *ngIf="lService.userRole">
+    <a routerLink="/transaction" class="nav-link" routerLinkActive="active">Transaction List</a>
+</li>
+<li class="nav-item" *ngIf="lService.userRole">
+    <a routerLink="/newtransaction" class="nav-link" routerLinkActive="active">Add Transaction</a>
+</li>
+
+  <li class="nav-item" *ngIf="lService.userRole">
+    <a routerLink="/credit" class="nav-link" routerLinkActive="active">Credit </a>
+</li>
+<li class="nav-item" *ngIf="lService.userRole">
+    <a routerLink="/debit" class="nav-link" routerLinkActive="active">Debit</a>
+</li>
+<li class="nav-item " *ngIf="lService.userRole">
+      
+  <a routerLink="/account" class="nav-link" routerLinkActive="active">Account List</a>
+</li>
+<li class="nav-item" *ngIf="lService.userRole">
+  <a routerLink="/newaccount" class="nav-link" routerLinkActive="active">Add Account</a>
+</li>
+
+    <li class="nav-item" *ngIf="lService.userRole">
+      <a routerLink="/customer" class="nav-link" routerLinkActive="active">Customer List</a>
+  </li>
+  <li class="nav-item" *ngIf="lService.userRole">
+      <a routerLink="/newcustomer" class="nav-link" routerLinkActive="active">Add Customer</a>
+  </li>
+
+
+  
+    <li class="nav-item" *ngIf="lService.userRole">
+      <a routerLink="/admin" class="nav-link" routerLinkActive="active">Admin List</a>
+  </li>
+<li class="nav-item" *ngIf="lService.userRole">
+      <a routerLink="/newadmin" class="nav-link" routerLinkActive="active">Add Admin</a>
+  </li>
+
+
+
+  </ul>
+</nav> -->
+
+
+ <div class="background" >
+ 
+<button
+*ngIf="!lService.userRole"
+[routerLink]="['/credit']"
+
+class="edit-btn theme-btn"
+>
+
+<label><b>Credit (Lets perform credit operation)</b></label> 
+</button>
+
+<button
+*ngIf="!lService.userRole"
+[routerLink]="['/debit']"
+
+class="debit-btn theme-btn"
+>
+
+<label><b>Debit (Lets perform debit operation)</b></label> 
+</button>
+
+<button
+*ngIf="!lService.userRole"
+[routerLink]="['/add']"
+
+class="loan-btn theme-btn"
+>
+
+
+<label><b>Apply Loan (Lets apply for loan)</b></label> 
+</button>
+
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/newadmin']"
+
+class="newadmin theme-btn"
+>
+
+
+<label><b>Add Admin</b></label> 
+</button>
+
+
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/admin']"
+
+class="admin theme-btn"
+>
+
+
+<label><b>Admin List</b></label> 
+</button>
+
+
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/newcustomer']"
+
+class="newcustomer theme-btn"
+>
+
+
+<label><b>Add Customer</b></label> 
+</button>
+
+
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/customer']"
+
+class="customer theme-btn"
+>
+
+
+<label><b>Customer List</b></label> 
+</button>
+
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/newaccount']"
+
+class="newaccount theme-btn"
+>
+
+
+<label><b>Open account</b></label> 
+</button>
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/account']"
+
+class="account theme-btn"
+>
+
+
+<label><b>Account List</b></label> 
+</button>
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/debit']"
+
+class="debit theme-btn"
+>
+
+
+<label><b>Perform Debit</b></label> 
+</button>
+
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/credit']"
+
+class="credit theme-btn"
+>
+
+
+<label><b>Perform Credit</b></label> 
+</button>
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/newtransaction']"
+
+class="newtransaction theme-btn"
+>
+
+
+<label><b>Adding Balance</b></label> 
+</button>
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/transaction']"
+
+class="transaction theme-btn "
+>
+
+
+<label><b>Transaction List</b></label> 
+</button>
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/add']"
+
+class="add theme-btn"
+>
+
+
+<label><b>Apply Loan</b></label> 
+</button>
+
+
+
+
+<button
+*ngIf="lService.userRole"
+[routerLink]="['/loans']"
+
+class="loans theme-btn"
+>
+
+
+<label><b>Loan List</b></label> 
+</button>
+
+
+</div>

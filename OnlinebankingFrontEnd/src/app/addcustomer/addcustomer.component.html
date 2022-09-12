@@ -1,0 +1,63 @@
+<div class="background">
+<h3>Add Customer</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form #customerForm="ngForm" (ngSubmit)="onSubmit()">
+      
+    <!-- <div class="form-group">
+      <label for="adrs">Customer ID</label>
+      <input type="text" class="form-control" id="custId" [(ngModel)]="customer.custId" name="custId">
+    </div> -->
+
+    <div class="form-group">
+      <label for="adrs">First Name</label>
+      <input type="text" #firstName="ngModel" class="form-control" id="firstName" required [(ngModel)]="customer.firstName" name="firstName" >
+      <span *ngIf="firstName.invalid && firstName.touched" class="error">First Name is required</span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="adrs">Last Name</label>
+        <input type="text" #lastName="ngModel" class="form-control" id="lastName" required [(ngModel)]="customer.lastName" name="lastName">
+        <span *ngIf="lastName.invalid && lastName.touched" class="error">Last Name is required</span>
+      </div>
+
+ 
+      <div class="form-group">
+        <label for="adrs">Mobile Number</label>
+        <input type="text" #mobNo="ngModel"  class="form-control" id="mobNo" required [(ngModel)]="customer.mobNo" name="mobNo" pattern="[0-9]{10}$" >
+        <span *ngIf="mobNo.invalid && mobNo.touched" class="error">Enter valid mobile number</span>
+      </div>
+
+
+      <div class="form-group">
+        <label for="adrs">Email</label>
+        <input type="text" #email="ngModel" class="form-control" id="email" required [(ngModel)]="customer.email" name="email" pattern="[A-Za-z].{0,}" >
+        <span *ngIf="email.invalid && email.touched" class="error">Enter valid email admin</span>
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Password</label>
+        <input type="password" #password="ngModel" class="form-control" id="password" required [(ngModel)]="customer.password" name="password" pattern="[A-Za-z].{0,}" >
+        <span *ngIf="password.invalid && password.touched" class="error">Enter valid password </span>
+      </div>
+
+    <!-- <div class="form-group">
+    <label for="name">Admin</label>
+    <select class="form-control" id="admin" required [(ngModel)]="customer.admin" name="admin">
+    <option [ngValue]="null" disabled>Select AdminId</option>
+    <option *ngFor="let admin of admines | async" [ngValue]="admin">
+    {{admin.adminId}}
+    </option>
+    </select>
+    </div> -->
+
+
+
+    <button type="submit" [disabled]='!customerForm.valid' class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<div [hidden]="!submitted">
+  <h4>Success!</h4>
+</div>

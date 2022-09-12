@@ -1,0 +1,135 @@
+<div class="background">
+<h2>Account Details</h2> 
+<hr/>
+<div *ngIf="account">`
+  <div id = "boxes">
+      <table class="table table-bordered text-center mt-5 table-hover" style="margin-top: 260px"></table>
+
+  <div id = "leftbox">
+    <h3>Account</h3>
+    <label><b>Account Id: </b></label> {{account.accountId}}
+  <br>
+    <label><b>City: </b></label> {{account.city}}
+   
+  <br>
+    <label><b>Pincode: </b></label> {{account.pincode}}
+    <br>
+    <label><b>Account Status : </b></label> {{account.accStatus}}
+    <br>
+    <label><b>Branch : </b></label> {{account.branch}}
+    <br>
+    <label><b>Bank Name: </b></label> {{account.bankName}}
+  </div>
+  <!-- </div> -->
+<!-- <div>
+  <div>
+    <label><b>City: </b></label> {{account.city}}
+  </div>
+
+  <div>
+    <label><b>Pincode: </b></label> {{account.pincode}}
+  </div>
+
+  <div>
+    <label><b>Account Status : </b></label> {{account.accStatus}}
+  </div>
+
+  <div>
+    <label><b>Branch : </b></label> {{account.branch}}
+  </div>
+
+  
+  <div>
+    <label><b>Bank Name: </b></label> {{account.bankName}}
+  </div>
+
+  
+
+  <div>
+    <label><b>State : </b></label> {{account.state}}
+  </div>
+  
+
+  <div>
+    <label><b>Country : </b></label> {{account.country}}
+  </div>
+  <div>
+    <label><b>Pincode: </b></label> {{account.pincode}}
+  </div>
+
+  <div>
+    <label><b>IFSC: </b></label> {{account.ifsc}}
+  </div> -->
+
+  <!-- &nbsp;&nbsp;
+  &nbsp;&nbsp; -->
+
+    <!-- <h2>Cust details</h2> -->
+   
+  <div id = "middlebox">
+    <h3>Cust details</h3>
+    <label><b>Customer Id: </b></label> {{account.customer.custId}}
+    <br>
+    <label><b>First Name </b></label> {{account.customer.firstName}}
+    <br>
+    <label><b>Last Name: </b></label> {{account.customer.lastName}}
+    <br>
+    <label><b>MOBILE NO: </b></label> {{account.customer.mobNo}}
+    <br> 
+    <label><b>Email ID: </b></label> {{account.customer.email}}
+  </div>
+
+  <!-- <div>
+    <label><b>First Name </b></label> {{account.customer.firstName}}
+  </div>
+
+  <div>
+    <label><b>Last Name: </b></label> {{account.customer.lastName}}
+  </div>
+
+  <div>
+    <label><b>MOBILE NO: </b></label> {{account.customer.mobNo}}
+  </div>
+
+  <div>
+    <label><b>Email ID: </b></label> {{account.customer.email}}
+  </div> -->
+  <!-- &nbsp;&nbsp;
+  &nbsp;&nbsp; -->
+  &nbsp;&nbsp;
+  &nbsp;&nbsp;
+  
+  <div id = "rightbox">
+    
+<h3>Admin details</h3>
+    <label><b>Admin Id: </b></label> {{account.admin.adminId}}
+    <br>
+    <label><b>First Name </b></label> {{account.admin.firstName}}
+    <br>
+    <label><b>Last Name: </b></label> {{account.admin.lastName}}
+    <br>
+    <label><b>MOBILE NO: </b></label> {{account.admin.mobNo}}
+    <br>
+    <label><b>Email ID: </b></label> {{account.admin.email}}
+  </div>
+  <div id="button">
+    <button (click)="list()" class="btn btn-primary">Back to Account List</button>
+    </div>
+  <!-- <div>
+    <label><b>First Name </b></label> {{account.admin.firstName}}
+  </div>
+
+  <div>
+    <label><b>Last Name: </b></label> {{account.admin.lastName}}
+  </div>
+
+  <div>
+    <label><b>MOBILE NO: </b></label> {{account.admin.mobNo}}
+  </div>
+ 
+  <div>
+    <label><b>Email ID: </b></label> {{account.admin.email}}
+  </div>
+   -->
+   
+</div>

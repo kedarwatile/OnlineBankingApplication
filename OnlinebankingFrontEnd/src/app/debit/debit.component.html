@@ -1,0 +1,83 @@
+<div class="background">
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+      <h2>Debit List</h2>
+    </div>
+
+    <section id="debits">
+      <div class="container">
+      <div class="search form-group">
+        <input
+          type="text"
+          [(ngModel)]="listFilter"
+        
+          placeholder="Search Admins"
+          class="form-control"
+          
+          autofocus
+        /> 
+      </div>
+   
+    
+    <div class="panel-body">
+      <!-- <table class="table table-striped"> -->
+        <table class="table table-bordered text-center mt-5 table-hover" style="margin-bottom: 260px;">
+        <thead>
+
+          <tr>
+            <th>Account Id</th>
+            <th>Account No</th>
+            <th>Status</th>
+            <th>DebitDate</th>
+            <th>DebitTime</th>
+            <!-- <th>TransactionTime</th>
+            <th>Debit</th>
+            <th>Debit</th> -->
+            <th>TransactionId</th>
+            <th>TransactionType</th>
+            <th>AccountBalance</th>
+            <!-- <th>Admin</th> -->
+            <th>Actions</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let transaction of filteredTransactions ">
+            <td>{{transaction.account.accountId}}</td>
+            <td>{{transaction.accountNo}}</td>
+            <td>{{transaction.status}}</td>
+            <td>{{transaction.transactionDate|date:'dd-MM-YYYY' }}</td>
+            <td>{{transaction.transactionDate|date: 'h:mm:ss a'}}</td>
+            <!-- <td>{{transaction.transactionTime}}</td>
+            <td>{{transaction.debit}}</td>
+            <td>{{transaction.debit}}</td> -->
+            <td>{{transaction.transactionId}}</td>
+            <td>{{transaction.transactionType}}</td>
+            <td>{{transaction.accBal}}</td>
+            <!-- <td>{{transaction.admin.adminId}}</td> -->
+
+            <!-- accountNo: number=0;
+            status: string = "";
+            transactionDate: Date = new Date();
+            transactionTime: string = "";
+            debit: number=0;
+            debit: number=0;
+            accountNo: number=0;
+            transactionType: string ="";
+            accBal:number=0; -->
+
+            <td>
+              <button (click)="debittransaction(transaction.accountNo)" class="btn btn-info" style="margin-left: 10px">Debit </button>
+              <!-- <button (click)="findByTransactionId(transaction.accountNo)" class="btn btn-info">Details</button> -->
+              <!-- <button (click)="updateTransaction(transaction.accountNo)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              -->
+           
+            </td>
+          </tr>
+        </tbody>
+        
+      </table>
+    </div>
+  </div>

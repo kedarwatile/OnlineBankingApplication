@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand mx-3" [routerLink]="['/home']">
+    <i><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgLCJWWjlNdKqC4ytDQmN_hws2irgw14MqyA&usqp=CAU" alt="" /></i>
+    <!-- https://i.pinimg.com/474x/1b/f2/d7/1bf2d78d622a01d80b166564d3faae45.jpg -->
+  </a>
+  <button
+    class="navbar-toggler"  
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarText"
+    aria-controls="navbarText"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+
+
+
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText"  >
+    <div class="mainmenu">
+      <ul id=" navbar-nav primary-menu mr-auto" >
+        <!-- <li class="nav-item">
+          <a routerLinkActive="active" class="nav-link" [routerLink]="['home']"
+            >Home</a
+          >
+        </li> -->
+        <!-- <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['/account/admin/list']"
+            >Account</a
+          >
+        </li>
+
+
+        <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['/newaccount']"
+            >Add-Account</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['admin']"
+            >Admin</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['customer']"
+            >Customer</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="lService.userRole">
+          <a routerLinkActive="active" class="nav-link" [routerLink]="['account']"
+            >Account</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['/admin']"
+            >Admin</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['/customer']"
+            >Customers</a
+          >
+        </li> -->
+       <!-- <li class="nav-item" *ngIf="lService.userRole">
+          <a
+            routerLinkActive="active"
+            class="nav-link"
+            [routerLink]="['/seat']"
+            >Seats</a
+          >
+        </li>-->
+   
+      <!-- <li class="nav-item" >
+         <label><b>User Id :</b></label> {{lService.getCustomerId()}} 
+        
+      </li> -->
+        
+      </ul>
+    </div>
+  </div>
+  
+  <button
+    *ngIf="lService.isLoginStatus && !lService.userRole"
+    [routerLink]="['/update/', lService.custId]"
+    class="edit-btn theme-btn"
+  >
+    
+    <label><b>User Id :</b></label> {{lService.getCustomerId()}}
+    (Customer)
+  </button>
+
+  <button
+    *ngIf="lService.isLoginStatus && lService.userRole"
+    [routerLink]="['/updateadmin/', lService.custId]"
+    class="edit-btn theme-btn"
+  >
+  <!-- [routerLink]="['/updateadmin/', lService.custId]" -->
+    
+    <label><b>User Id :</b></label> {{lService.getCustomerId()}}
+    (Admin)
+  </button>
+
+  <button
+    *ngIf="!lService.isLoginStatus"
+    [routerLink]="['/signIn']"
+    class="login-btn theme-btn"
+  >
+  
+    Login
+  </button>
+  <button
+    *ngIf="lService.isLoginStatus"
+    (click)="onLogout()"
+    class="login-btn theme-btn"
+  >
+    Logout
+  </button>
+
+</nav>

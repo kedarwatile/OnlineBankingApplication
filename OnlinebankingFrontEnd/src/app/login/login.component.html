@@ -1,0 +1,109 @@
+
+<html>
+
+  <!-- <script type="text/javascript">
+      function required(siteKey)
+    {
+     if (document.getElementById('siteKey').value.length == 0)
+      { 
+         alert("Please enter captcha");  	
+         location.reload();
+         return false; 
+      }  	
+      return true; 
+    }
+</script> -->
+
+</html>
+<section id="login">
+  <div class="container" style="background-image: url(https://img.freepik.com/premium-vector/online-banking-money-transaction-concept-foreign-exchange-bank-icon-dark-blue-background_387612-67.jpg?w=2000);">
+    <h3 style="color: red">{{ errorMessage }}</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin()" doLogin="required()">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card">
+          <div class="card-header">
+            <h3>Sign In</h3>
+            <div class="d-flex justify-content-end social_icon"></div>
+          </div>
+          <div class="card-body">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-user"></i
+                ></span>
+              </div>
+              <div class="col custom-col">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userName"
+                placeholder="Username"
+                required
+                [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+              />
+              <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                <div *ngIf="f['username'].errors['required']">Username is required</div>
+              </div>
+              <small class="text-danger" *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')"> Username is required</small>
+            </div>
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <div class="col custom-col">
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="Password"
+                required
+              />
+              <small class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"> Password is required</small>
+            </div>
+            </div>
+               <p [hidden]="flag"><span class="text-danger"><em>Invalid Data </em></span></p>
+            <!-- <ngx-recaptcha2 #captchaElem
+            [siteKey]="siteKey"
+            formControlName="recaptcha">
+
+          </ngx-recaptcha2> -->
+
+            <div class="form-group">
+              <button
+                type="submit"
+                value="Login"
+               
+               
+
+                class="btn float-right login_btn "[disabled]="loginForm.invalid"
+              
+              >
+                Login
+                
+              </button>
+              <!-- [disabled]="loginForm.invalid" -->
+            </div>
+            <div class="form-group">
+              <button
+                
+               (click)="goTo()"
+                class="btn btn-outline-info btn-sm"
+              
+              >
+                Forgot Password?
+              </button>
+
+            </div>
+          
+          </div>
+          <hr />
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links" style="color: lightcoral;"><a [routerLink]="['/signUp']"> New user ? (Sign Up) </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

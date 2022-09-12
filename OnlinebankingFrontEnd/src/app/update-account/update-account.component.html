@@ -1,0 +1,100 @@
+<div class="background">
+<h3>Update Account</h3>
+<div [hidden]="submitted" style="width: 400px;">
+
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="adrs">Account Id</label>
+        <input type="text" class="form-control" id="accountId" required [(ngModel)]="account.accountId" name="accountId">
+      </div>
+  
+
+
+         <!-- <div class="form-group">
+          <label for="name">Admin</label>
+          <select class="form-control" id="admin" required [(ngModel)]="account.admin" name="admin">
+          <option [ngValue]="null" disabled>Select AdminId</option>
+          <option *ngFor="let admin of admines | async" [ngValue]="admin">
+          {{admin.adminId}}
+          </option>
+          </select>
+          </div> 
+   -->
+
+          <!-- <div class="form-group">
+            <label for="name">Customer</label>
+            <select class="form-control" id="customer" required [(ngModel)]="account.customer" name="customer">
+            <option [ngValue]="null" disabled>Select CustomerId</option>
+            <option *ngFor="let customer of customers | async" [ngValue]="customer">
+            {{customer.custId}}
+            </option>
+            </select>
+            </div>
+   -->
+        <!-- <div class="form-group">
+          <label for="adrs">Admin</label>
+          <input type="text" class="form-control" id="admin" required [(ngModel)]="account.admin" name="admin">
+        </div> -->
+  
+<!--   
+        <div class="form-group">
+          <label for="adrs">Status</label>
+          <input type="text" class="form-control" id="accStatus" required [(ngModel)]="account.accStatus" name="accStatus">
+        </div> -->
+
+            
+      <div class="form-group">
+        <label for="adrs">Status</label>
+        <input type="text" class="form-control" id="accStatus" required [(ngModel)]="account.accStatus" name="accStatus">
+      </div>
+<!--   
+  
+        <div class="form-group">
+          <label for="adrs">Date</label>
+          <input type="text" class="form-control" id="accountDate" required [(ngModel)]="account.accountDate" name="accountDate">
+        </div> -->
+        
+
+
+
+        
+      <div class="form-group">
+        <label for="adrs">City</label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="account.city" name="city">
+      </div>
+
+      
+      <div class="form-group">
+        <label for="adrs">State</label>
+        <input type="text" class="form-control" id="state" required [(ngModel)]="account.state" name="state">
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Country</label>
+        <input type="text" class="form-control" id="country" required [(ngModel)]="account.country" name="country">
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Pin Code</label>
+        <input type="text" class="form-control" id="pincode" required [(ngModel)]="account.pincode" name="pincode">
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Branch</label>
+        <input type="text" class="form-control" id="branch" required [(ngModel)]="account.branch" name="branch">
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Bank Name</label>
+        <input type="text" class="form-control" id="bankName" required [(ngModel)]="account.bankName" name="bankName">
+      </div>
+  
+  
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+<div [hidden]="!submitted">
+  <h4>Updated successfully!</h4>
+</div>

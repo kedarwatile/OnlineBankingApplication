@@ -1,0 +1,149 @@
+
+<!-- 
+userid: number=0;
+firstName: string="";
+lastName: string="";
+mobNo: string="";
+email: string="";
+role: string=""; -->
+
+<div class="background">
+<section id="signup">
+  <div class="container" style="background-image: url(https://media.istockphoto.com/photos/businessman-touching-icon-customer-global-networking-connection-on-picture-id1206799135?k=20&m=1206799135&s=612x612&w=0&h=51qNAzpkB-f_MW1n9rIXUZebhMysWEmWiBFk75PuQG8=);"> 
+   <!-- <div class="container"> -->
+    <h3 style="color: red">{{ errorMessage }}</h3>
+    <form [formGroup]="userForm" (ngSubmit)="addAUser()">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card">
+          <div class="card-header">
+            <h3>Sign Up</h3>
+            <div class="d-flex justify-content-end social_icon"></div>
+          </div>
+          <div class="card-body">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-user"></i
+                ></span>
+              </div>
+              <div class="col custom-col">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstName"
+                placeholder="firstName"
+                required
+              />
+             <div *ngIf="!userForm.controls.name?.valid && (userForm.controls.name?.dirty || userForm.controls.name?.touched) && t['firstName'].errors">
+                Name is not valid
+              </div>
+              
+              
+            </div>
+            </div>
+                           
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-lastName"></i
+                ></span>
+              </div>
+              <div class="col custom-col">
+              <input type="text" class="form-control" formControlName="lastName" placeholder="lastName" required/>
+              <small class="text-danger" *ngIf="userForm.controls['lastName'].dirty && userForm.hasError('required','lastName') "> lastName is required</small>
+            </div>
+          </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-mobNo"></i
+                ></span>
+              </div>
+              <div class="col custom-col">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="mobNo"
+                placeholder="mobNo"
+                required
+              />
+              <small class="text-danger" *ngIf="userForm.controls['mobNo'].dirty && userForm.hasError('required','mobNo') "> mobile is required</small>
+              <small class="text-danger" *ngIf="userForm.hasError('pattern','mobNo')"> enter 10 digit number</small>
+            </div>
+            </div>
+
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fa fa-envelope"></i></span>
+              </div>
+              <div class="col custom-col">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                placeholder="Email"
+                required
+              />
+               <small class="text-danger" *ngIf="userForm.controls['email'].dirty && userForm.hasError('required','email') "> Email is required</small>
+             <p [hidden]="flag" class="text-danger">Email already Exists.</p> 
+            </div>
+            </div>
+           
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <div class="col custom-col">
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="Password"
+                required />
+              <small class="text-danger" *ngIf="userForm.controls['password'].dirty && userForm.hasError('required','password')"> Password is required</small>
+            </div>
+            </div>
+            <div class="radio">
+              <input
+                type="radio"
+                id="admin"
+                name="role"
+                value="admin"
+                formControlName="role"
+                class="radio"
+              />
+              <label class="radioName" for="male">Admin</label><br />
+              <input
+                type="radio"
+                id="customer"
+                name="role"
+                value="customer"
+                formControlName="role"
+                class="radio"
+              />
+              <label class="radioName" for="female">Customer</label><br />
+            </div>
+            <div class="form-group">
+              <button type="submit"[disabled]="!userForm.valid" class="btn float-right login_btn" >
+                Sign Up
+              </button>
+
+              <!-- [disabled]="!userForm.valid" -->
+            </div>
+
+            <!-- <div class="row align-items-center remember">
+                <input type="checkbox" />Remember Me
+              </div> -->
+          </div>
+          <hr />
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links">          
+              <a [routerLink]="['/signIn']">Already having an account ? (Sign In)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

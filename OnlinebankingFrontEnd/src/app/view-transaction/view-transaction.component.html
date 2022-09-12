@@ -1,0 +1,96 @@
+<div class="background">
+<h2>Transaction Details</h2> 
+<hr/>
+<div *ngIf="transaction">
+
+  <div id = "boxes">
+    <table class="table table-bordered text-center mt-5 table-hover" style="margin-top: 260px"></table>
+
+  <div id = "leftbox">
+    <h2>Transaction</h2>
+ 
+    <label><b>Account No: </b></label> {{transaction.accountNo}}
+    <br>
+    <label><b>Transaction ID: </b></label> {{transaction.transactionId}}
+    <br>
+    <label><b>Account Balance: </b></label> {{transaction.accBal}}
+ 
+    <br>
+
+  
+    <label><b>Transaction Type: </b></label> {{transaction.transactionType}}
+    <br>
+    <label><b>Transaction Date: </b></label> {{transaction.transactionDate | date:'dd-MM-YYYY'}}
+    <label><b>Transaction Time: </b></label> {{transaction.transactionDate |date: 'h:mm:ss a'}}
+    <label><b>Status: </b></label> {{transaction.status}}
+ 
+</div>
+
+  <!-- &nbsp;&nbsp;
+  &nbsp;&nbsp; -->
+
+  <div id = "middlebox">
+  <h2>Account Details</h2> 
+
+  
+    <label><b>Account Id: </b></label> {{transaction.account.accountId}}
+    <br>
+    <label><b>City: </b></label> {{transaction.account.city }}
+    <br>
+    <label><b>Pincode: </b></label> {{transaction.account.pincode}}
+    <br>
+    <label><b>Account Status : </b></label> {{transaction.account.accStatus | titlecase}}
+    <br>
+    <label><b>Branch : </b></label> {{transaction.account.branch}}
+    <br>
+    <label><b>Bank Name: </b></label> {{transaction.account.bankName }}
+    <br>
+    <label><b>State : </b></label> {{transaction.account.state}}
+    <br>
+    <label><b>Country : </b></label> {{transaction.account.country}}
+    <br>
+    <label><b>Pincode: </b></label> {{transaction.account.pincode}}
+    <br>
+    <label><b>IFSC: </b></label> {{transaction.account.ifsc}}
+    
+</div>
+  <!-- &nbsp;&nbsp;
+  &nbsp;&nbsp; -->
+
+  <div id = "rightbox">
+    <h3>Customer details</h3>
+
+    <label><b>Customer Id: </b></label> {{transaction.account.customer.custId}}
+    <br>
+    <label><b>First Name </b></label> {{transaction.account.customer.firstName | titlecase}}
+    <br>
+    <label><b>Last Name: </b></label> {{transaction.account.customer.lastName | titlecase}}
+    <br>
+    <label><b>MOBILE NO: </b></label> {{transaction.account.customer.mobNo}}
+    <br>
+    <label><b>Email ID: </b></label> {{transaction.account.customer.email | titlecase}}
+    <br>
+    <h3>Admin details</h3>
+    <label><b>Admin Id: </b></label> {{transaction.account.admin.adminId}}
+    <br>
+    <label><b>First Name </b></label> {{transaction.account.admin.firstName | titlecase}}
+    <br>
+    <label><b>Last Name: </b></label> {{transaction.account.admin.lastName | titlecase}}
+    <br>
+    <label><b>MOBILE NO: </b></label> {{transaction.account.admin.mobNo}}
+    <br>
+    <label><b>Email ID: </b></label> {{transaction.account.admin.email | titlecase}}
+
+  
+  
+
+</div>
+
+ 
+  
+
+<div id="button">
+  <button (click)="list()" class="btn btn-primary">Back to Transaction List</button>
+  </div>
+
+</div>

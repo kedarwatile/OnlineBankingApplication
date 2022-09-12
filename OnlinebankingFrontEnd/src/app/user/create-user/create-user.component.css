@@ -1,0 +1,128 @@
+#signup {
+  background: #ffffffd7;
+  position: relative;
+  top: -8px;
+  overflow: hidden;
+
+}
+.container {
+  min-height: 90vh;
+  align-content: center;
+}
+
+.card {
+  height: 600px;
+  margin-top: 5rem;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.social_icon span {
+  font-size: 70px;
+  margin-left: 10px;
+  color: #f0456ae5;
+}
+
+.social_icon span:hover {
+  color: white;
+  cursor: pointer;
+
+}
+
+.card-header h3 {
+  color:#7B59D1;
+  margin-bottom: 2rem;
+}
+
+.social_icon {
+  position: absolute;
+  right: 20px;
+  top: -45px;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  
+}
+
+.input-group-prepend span {
+  width: 50px;
+  height:38px;
+  background-color:#7B59D1;
+  color: black;
+  border: 0 !important;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+
+} 
+
+.remember {
+  color: #7B59D1;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.login_btn {
+  color: black;
+  background-color: #f0456ae5;
+  width: 100px;
+  margin-top: -2rem;
+  margin-left: 7rem;
+}
+
+.login_btn:hover {
+  color: black;
+  background-color:#7B59D1;
+}
+
+.links {
+  color: rgb(0, 0, 0);
+}
+
+.links a {
+  margin-left: 4px;
+}
+
+hr {
+  background-color: rgb(146, 146, 146);
+}
+
+.radio {
+  display: inline;
+}
+
+.radioName {
+  margin-left: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.card-footer{
+  background-color:#2ae65fe5;
+}
+
+
+.error{
+  color: red;
+}
+
+.custom-col{
+  display: flex;
+  flex-direction:column;
+  align-items: baseline;
+}
+
+.custom-col span{
+  color: red;
+  font-size: smaller;
+  margin-top: 1rem;
+  
+}

@@ -1,0 +1,56 @@
+<div class="background">
+  <div class="text-center my-3">
+    <h2><u>All Loan Application</u></h2>
+  </div>
+
+
+  <section id="loans">
+    <div class="container">
+    <div class="search form-group">
+      <input
+        type="text"
+        [(ngModel)]="listFilter"
+      
+        placeholder="Search Loans by loan status/date/loanId"
+        class="form-control"
+        
+        autofocus
+      /> 
+    </div>
+ 
+
+  <table class="table table-bordered text-center mt-5 table-hover"
+    style="margin-bottom: 260px; ">
+    <thead>
+      <tr>
+        <th>loan Id</th>
+        <th>Applicant Name</th>
+        <th>Phone Number</th>
+        <th>Date Of Application</th>
+        <th>Loan Amount</th>
+        <th>Loan Type</th>
+        <!--   <th>Loan Proof Type</th>-->
+        <th>LoanAproval Status</th>
+        <th>Available Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of filteredLoans">
+        <td>{{loan.loanId}}</td>
+        <td>{{loan.applicant_name}}</td>
+        <td>{{loan.phoneNumber}}</td>
+        <td>{{loan.dateOfApplication | date:'yyyy-MM-dd'}}</td>
+        <td>{{loan.loanAmount}}</td>
+        <td>{{loan.loanType}}</td>
+        <!--<td>{{loan.file}}</td>-->
+        <td>{{loan.adminLoanAproval}}</td>
+
+        <td><button (click)="deleteLoan(loan.loanId)" class="btn btn-danger">Delete </button>
+          <button (click)="updateLoan(loan.loanId)" class="btn btn-info" style="margin-left: 10px">Change Application Status</button>
+          <button (click)="loanDetails(loan.loanId)" class="btn btn-info" style="margin-left: 10px">View Application
+            Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

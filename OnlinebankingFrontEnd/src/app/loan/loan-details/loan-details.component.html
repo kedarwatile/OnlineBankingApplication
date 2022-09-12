@@ -1,0 +1,63 @@
+<div class="card-body">
+    <h2>Loan Details</h2>
+
+    <div *ngIf="loan">
+        <div>
+            <label><b>loan Id : </b></label> {{loan.loanId}}
+        </div>
+        <div>
+            <label><b>applicant Name : </b></label> {{loan.applicant_name }}
+        </div>
+        <div>
+            <label><b>Phone Number : </b></label> {{loan.phoneNumber}}
+        </div>
+        <div>
+            <label><b>Date Of Application : </b></label> {{loan.dateOfApplication | date:'yyyy-MM-dd'}}
+        </div>
+        <div>
+            <label><b>Date Of Birth : </b></label> {{loan.birthDate | date:'yyyy-MM-dd'}}
+        </div>
+        <div>
+            <label><b>Loan Approval Status : </b></label> {{loan.adminLoanAproval }}
+        </div>
+        <div>
+            <label><b>Id Proof Type: </b></label> {{loan.id_type }}
+        </div>
+        <div>
+            <label><b>Id Proof Number: </b></label> {{loan.idProofNo}}
+        </div>
+        <div>
+            <label><b>Marital Status: </b></label> {{loan.marital_status}}
+        </div>
+        <div>
+            <label><b>Employement Status </b></label> {{loan.employement_status}}
+        </div>
+        <div>
+            <label><b>Place Of work: </b></label> {{loan.place_of_work}}
+        </div>
+        <div>
+            <label><b>Job Title: </b></label> {{loan.job_title}}
+        </div>
+        <div>
+            <label><b>Anual Income : </b></label> {{loan.anual_income }}
+        </div>
+
+        <div>
+            <label><b>Loan Amount : </b></label> {{loan.loanAmount }}
+        </div>
+
+        <div>
+            <label><b>Loan Type : </b></label> {{loan.loanType }}
+        </div>
+       
+        <div>
+            <label><b>Loan Approval Status : </b></label> {{loan.adminLoanAproval }}
+        </div>
+
+
+
+    </div>
+    <p></p>
+    <button (click)="list()" class="btn btn-primary">Back to loans List</button>
+
+</div>

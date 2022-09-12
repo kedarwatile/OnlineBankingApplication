@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <strong>Sort Transactions by:</strong>
+        <select ng-model="transType" class="form-control">
+          <option value=''>All</option>
+          <option value='credit'>Credit</option>
+          <option value='debit'>Debit</option>
+        </select>
+      </p>
+      <table>
+        <tr class="m1">
+          <th>Account no</th>
+          <th>Amount</th>
+          <th>Transaction Date</th>
+          <th>Transaction type</th>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>500</td>
+          <td>20 June 2022</td>
+          <td>Debit</td>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>3000</td>
+          <td>01 June 2022</td>
+          <td>Credit</td>
+        </tr>
+      </table>
+      
+</body>
+</html>

@@ -1,0 +1,61 @@
+<div class="background">
+<h3>Admin</h3>
+
+
+<div [hidden]="submitted" style="width: 400px;">
+  <form #adminForm="ngForm" (ngSubmit)="onSubmit()">
+      
+    <!-- <div class="form-group">
+      <label for="adrs">Admin ID</label>
+      <input type="text" class="form-control" id="adminId" [(ngModel)]="admin.adminId" name="adminId">
+    </div> -->
+
+    <div class="form-group">
+      <label for="adrs">First Name</label>
+      <input type="text" #firstName="ngModel" class="form-control" id="firstName" required [(ngModel)]="admin.firstName" name="firstName" >
+      <span *ngIf="firstName.invalid && firstName.touched" class="error">First Name is required</span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="adrs">Last Name</label>
+        <input type="text" #lastName="ngModel" class="form-control" id="lastName" required [(ngModel)]="admin.lastName" name="lastName">
+        <span *ngIf="lastName.invalid && lastName.touched" class="error">Last Name is required</span>
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Moblie Number</label>
+        <input type="text" #mobNo="ngModel" class="form-control" id="mobNo" required [(ngModel)]="admin.mobNo" name="mobNo" pattern="[0-9]{10}$">
+        <span *ngIf="mobNo.invalid && mobNo.touched" class="error">Moblie number is required</span>
+      </div>
+
+ 
+ 
+      <!-- <div class="form-group">
+        <label for="adrs">Mobile Number</label>
+        <input type="text" #mobNo="ngModel"  class="form-control" id="mobNo" required [(ngModel)]="admin.mobNo" name="mobNo" >
+        <span *ngIf="mobNo.invalid && mobNo.touched" class="error">Enter valid mobile number</span>
+      </div> -->
+ <!-- pattern="[0-9]{10}$" -->
+
+      <div class="form-group">
+        <label for="adrs">Email</label>
+        <input type="text" #email="ngModel" class="form-control" id="email" required [(ngModel)]="admin.email" name="email" pattern="[A-Za-z].{0,}" >
+        <span *ngIf="email.invalid && email.touched" class="error">Enter valid email admin</span>
+      </div>
+
+      <div class="form-group">
+        <label for="adrs">Password</label>
+        <input type="password" #password="ngModel" class="form-control" id="password" required [(ngModel)]="admin.password" name="password" pattern="[A-Za-z].{0,}" >
+        <span *ngIf="password.invalid && password.touched" class="error">Enter valid password </span>
+      </div>
+
+    <button type="submit" [disabled]='!adminForm.valid' class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<div [hidden]="!submitted">
+  <h4>Success!</h4>
+</div>
+</div>

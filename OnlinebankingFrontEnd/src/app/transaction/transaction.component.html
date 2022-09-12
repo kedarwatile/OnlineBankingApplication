@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="firstWord">Banking<span class="secondWord">Transaction</span></h1>
+        <hr />
+        <!--<p>Hello {{account.name}}! You currently have a balance of: {{account.runningBalance | currency}}-->
+        <!--</p>-->
+        
+         <h4 class="alert alert-default" ></h4>
+        
+        <div class="row">
+          <div class="col-md-12">
+    
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Make a transaction</h3> 
+              </div>
+              <div class="panel-body">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="description">Account No </label> 
+                    <input type="text" class="form-control" id="description" placeholder="" ng-model='transaction.description'>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon">Amount </span>
+                      <input type="number" step="1.0" min=0 class="form-control" id="amount" placeholder="0.00" ng-model="transaction.amount">
+                    </div>
+                    <br>
+                  </div>
+                  <select class="form-control" ng-model="transaction.type">
+                    <option value='debit'>Debit</option>
+                    <option value='credit'>Credit</option>
+                  </select>
+                  <br>
+                  <br>
+                  <button type="submit" class="btn btn-primary" ng-click="saveTransaction()">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
